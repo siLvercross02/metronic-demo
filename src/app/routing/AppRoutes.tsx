@@ -11,6 +11,7 @@ import {PrivateRoutes} from './PrivateRoutes'
 import {ErrorsPage} from '../modules/errors/ErrorsPage'
 import {Logout, AuthPage, useAuth} from '../modules/auth'
 import {App} from '../App'
+import { Nav } from 'react-bootstrap'
 
 /**
  * Base URL of the website.
@@ -30,7 +31,8 @@ const AppRoutes: FC = () => {
           {currentUser ? (
             <>
               <Route path='/*' element={<PrivateRoutes />} />
-              <Route index element={<Navigate to='/dashboard' />} />
+              {/* <Route index element={<Navigate to='/dashboard' />} /> */}
+              <Route index element={<Navigate to='/apps/user-management/users' />} />
             </>
           ) : (
             <>
